@@ -1,1 +1,2 @@
-瀹夎櫕椤圭洰鍒濆鐗堟湰
+你好啊，
+TortoiseGit是对msysGit命令行的封装，所以安装TortoiseGit必须安装msysGit
