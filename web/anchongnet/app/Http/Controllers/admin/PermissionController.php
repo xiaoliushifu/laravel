@@ -165,12 +165,14 @@ class PermissionController extends Controller
         $rid=$req->get('rid');
         $data=array();
         foreach(explode(',',$req->get('perms')) as $v){
-            $data[] = ['permission_id'=>$v,'role_id'=>$rid];
+            if($v)
+                $data[] = ['permission_id'=>$v,'role_id'=>$rid];
         }
         
         DB::beginTransaction();
         //先删除，后插入
         DB::table('anchong_permission_role')->where('role_id',$rid)->delete();
+        //当为某个角色删除全部权限时，$data为空
         DB::table('anchong_permission_role')->insert($data);
         DB::commit();
        //给个提示
@@ -188,7 +190,9 @@ class PermissionController extends Controller
         //因为ajax暂时无法提交数组形式，所以数组拆分为字符串才可以传输
         //注意，explode(',','a,b')和explode(',','a,b,')是不同的，
         foreach(explode(',',$req->get('roles')) as $v){
-            $data[] = ['role_id'=>$v,'user_id'=>$uid];
+            //当为某用户完全清除角色身份时，$v将是空字符串
+            if($v)      
+                $data[] = ['role_id'=>$v,'user_id'=>$uid];
         }
         DB::beginTransaction();
         //先删除，后插入

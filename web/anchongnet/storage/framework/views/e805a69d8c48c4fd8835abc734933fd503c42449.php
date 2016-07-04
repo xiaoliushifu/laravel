@@ -172,7 +172,9 @@ $(function(){
 		 var rid=$('#hidrid').val();
 		 //接收checkbox的值为字符串
 		 var a=[];
+		 alert(a.join());
 		 $('input[type="checkbox"]:checked').each(function(k,v){a.push(v.value)});
+		 //组织ajax
         $.ajax({
             type: 'post',
             url: '/permission/addperm',
@@ -187,6 +189,7 @@ $(function(){
                 alert(error);
             }
         });
+        //阻止浏览器默认行为
         return false;
     });
 })
