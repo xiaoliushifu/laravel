@@ -58,21 +58,28 @@ class AliSms {
 		if(!$this->sms_param){
 			unset($param['sms_param']);
 		}
-
+		//array_merge只传递一个数组，且是索引数组时才有用，所以其他情况下无用
+		//param数组的，键值对，拼接字符串
 		$param['sign'] = $this->_sign(array_merge($param));
-		$result = $this->_sendSms($param);
-		return $result;
+		
+		//去执行最终的发送
+		//$param数组的sign下标的值，是其他元素的键值对进行，md5并转大写的字符串。
+		return  $this->_sendSms($param);
 	}
 
 	private function _sign($param){
+	    //按照 关联下标排序
 		ksort($param);
 
+		//字符串开头一个
 		$sign = $this->secretKey;
 		foreach ($param as $k => $v){
+		    //键值对 紧贴着拼凑起一个字符串
 			$sign .= "$k$v";
 		}
+		//字符串结尾一个
 		$sign .= $this->secretKey;
-
+        //md5后，全部转为大写。
 		return strtoupper(md5($sign));
 	}
 
@@ -98,7 +105,8 @@ class AliSms {
 	}
 
 	public function __construct($param1 = "",$param2 = "",$param3 = "",$param4 = ""){
-		if($param1!=="" && $param2!=="" && $param3==="" && is_string($param1) && is_string($param2)){
+	    //前两个不空，第三个空，且前两个参数是字符串类型
+		if ($param1!=="" && $param2!=="" && $param3==="" && is_string($param1) && is_string($param2)) {
 			$this->appkey($param1);
 			$this->secret($param2);
 		}
@@ -106,7 +114,7 @@ class AliSms {
 			$this->appkey(C("ALI_SMS_APP_KEY"));
 			$this->secret(C("ALI_SMS_SECRET_KEY"));
 		}
-		if(is_array($param2) && $param3!==""){
+		if (is_array($param2) && $param3!=="") {
 			$this->code($param1);
 			$this->data($param2);
 			$this->sign($param3);
@@ -126,6 +134,7 @@ class AliSms {
 		return $this;
 	}
 
+	 //确定发送哪一类短信，注册认证？修改密码？等
 	public function sign($sign_name = ''){
 		$this->sms_free_sign_name = $sign_name;
 		return $this;
