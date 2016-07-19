@@ -30,7 +30,7 @@ class UserController extends Controller
             case 1:
                 $action="注册验证";
                 break;
-            case 2:
+            case '2':                         //"修改密码"的action=2
                 $action="变更验证";
                 break;
             case 3:
@@ -43,8 +43,9 @@ class UserController extends Controller
                 return response()->json(['serverTime'=>time(),'ServerNo'=>1,'ResultData'=>['Message'=>'短信行为异常']]);;
                 break;
         }
-        //new一个短信的对象
+        //new一个短信的对象,仅仅实例化，什么也不做，连个构造函数也没有
         $smsauth=new \App\SMS\smsAuth();
+        //去封装参数，拼接字符串，md5生成sign，基本上，就是要仔细查看接口文档才能明白，如何封装参数，请求地址，请求方法。
         $result=$smsauth->smsAuth($action,$param['phone']);
         //判断短信是否发送成功并且插入Redis
         if($result[0]){
@@ -82,7 +83,7 @@ class UserController extends Controller
                 $redis = Redis::connection();
                 if($redis->get($param['phone'].'注册验证') == $param['phonecode']){
                     $redis->del($param['phone'].'注册验证');
-                    //向users表中插的数据
+                    //像users表中插的数据
                     $users_data=[
                         'phone' => $param['phone'],
                         'ctime' => $data['time'],
