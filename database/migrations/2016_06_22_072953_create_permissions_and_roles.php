@@ -1,0 +1,72 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreatePermissionsAndRoles extends Migration
+{
+		public function up()
+		{
+
+				//角色表
+				Schema::create('roles', function (Blueprint $table) {
+					$table->increments('id');
+					$table->string('name');
+					$table->string('label');
+					$table->string('description')->nullable();
+					$table->timestamps();
+				});
+			 
+				Schema::create('permissions', function (Blueprint $table) {
+					$table->increments('id');
+					$table->string('name');
+					$table->string('label');
+					$table->string('description')->nullable();
+					$table->timestamps();
+				});
+			 
+				Schema::create('permission_role', function (Blueprint $table) {
+					$table->integer('permission_id')->unsigned();
+					$table->integer('role_id')->unsigned();
+			 
+					$table->foreign('permission_id')
+						  ->references('id')
+						  ->on('permissions')
+						  ->onDelete('cascade');
+			 
+					$table->foreign('role_id')
+						  ->references('id')
+						  ->on('roles')
+						  ->onDelete('cascade');
+			 
+					$table->primary(['permission_id', 'role_id']);
+				});
+			 
+				Schema::create('role_user', function (Blueprint $table) {
+					$table->integer('user_id')->unsigned();
+					$table->integer('role_id')->unsigned();
+			 
+					$table->foreign('role_id')
+						  ->references('id')
+						  ->on('roles')
+						  ->onDelete('cascade');
+			 
+					
+					$table->foreign('user_id')
+						//如果users表的用户id字段名不是id，则修改使之关联users表的字段名
+						  ->references('users_id')
+						  ->on('users')
+						  ->onDelete('cascade');
+			 
+					$table->primary(['role_id', 'user_id']);
+				});
+		 }
+	 
+	public function down()
+	{
+		Schema::drop('roles');
+		Schema::drop('permissions');
+		Schema::drop('permission_role');
+		Schema::drop('role_user');
+	}
+}
