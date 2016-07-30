@@ -1,8 +1,9 @@
-<<<<<<< HEAD
 .settings
 .buildpath
 .project
-=======
 .DS_Store
-.project
->>>>>>> cef9de29070a9f59bee1eb873f0652d82e813d26
+storage
+vendor
+framework/views
+framework/sessions
+framework/cache
