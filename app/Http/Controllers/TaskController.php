@@ -45,9 +45,9 @@ class TaskController extends Controller
 		//$tasks = Task::where('user_id', $request->user()->id)->get();
 		$tasks=['a'=>'1','b'=>'2','c'=>'3'];
 		
-		return view('tasks.index', [
+		return response()->view('tasks.index', [
 			'tasks' => $tasks,
-		]);
+		])->header('contEnt-tYpe','text/html;charset=utf-8');
 	}
 
 	public function store(Request $request)

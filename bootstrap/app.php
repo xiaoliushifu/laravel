@@ -44,7 +44,7 @@ $app->singleton(
     Illuminate\Contracts\Console\Kernel::class, //接口名
     App\Console\Kernel::class                   //实现上述接口的类
 );
-
+//绑定接口到具体实现的类，这样如果有新的类A实现了相同的接口ExceptionHandler，则只需绑定新类A即可。非常方便
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class, //接口名
     App\Exceptions\Handler::class       //实现上述接口的类

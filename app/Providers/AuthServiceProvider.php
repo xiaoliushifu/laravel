@@ -32,7 +32,7 @@ class AuthServiceProvider extends ServiceProvider
 
 
          //必须先定义好权限，才能在后续时检测
-		  $permissions = Permission::with('roles')->get();
+		/*   $permissions = Permission::with('roles')->get();
 		  //dump($permissions);
 		  //var_dump($permissions);exit;
         foreach ($permissions as $permission) {
@@ -43,7 +43,7 @@ class AuthServiceProvider extends ServiceProvider
                 //通过hasPermission方法，去数据库中比对
                 return $user->hasPermission($permission);
             });
-        }
+        } */
 
 
 

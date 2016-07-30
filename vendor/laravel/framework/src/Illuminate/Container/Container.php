@@ -216,7 +216,7 @@ class Container implements ArrayAccess, ContainerContract
     {
         return function ($c, $parameters = []) use ($abstract, $concrete) {
             $method = ($abstract == $concrete) ? 'build' : 'make';
-
+            //这次的make,传递的是$concrete而不是$abstract
             return $c->$method($concrete, $parameters);
         };
     }

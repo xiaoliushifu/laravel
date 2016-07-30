@@ -1,41 +1,4 @@
 <?php
-#测试用
-$filename='MyCLI.php';
-/* 
- //SERVER
- error_log("<?php\r\n".'$_SERVER=array('."\r\n",3,$filename);
- foreach($_SERVER as $key=>$val)
-     error_log("'$key'=>'$val',\r\n",3,$filename);
-     error_log(");\r\n\r\n",3,$filename);
-
- //POST
- error_log('$_POST=array('."\r\n",3,$filename);
- foreach($_POST as $key=>$val)
-     error_log("'$key'=>'$val',\r\n",3,$filename);
-     error_log(");\r\n\r\n",3,$filename);
-
- //GET
- error_log('$_GET=array('."\r\n",3,$filename);
- foreach($_GET as $key=>$val)
-     error_log("'$key'=>'$val',\r\n",3,$filename);
-     error_log(");\r\n\r\n",3,$filename);
-
- //COOKIE
- error_log('$_COOKIE=array('."\r\n",3,$filename);
- foreach($_COOKIE as $key=>$val)
-     error_log("'$key'=>'$val',\r\n",3,$filename);
-     error_log(");\r\n\r\n",3,$filename);
- echo "Store OK!";
- exit(); */
- //include($filename);
-
-/**
- * Laravel - A PHP Framework For Web Artisans
- *
- * @package  Laravel
- * @author   Taylor Otwell <taylorotwell@gmail.com>
- */
-
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader

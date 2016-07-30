@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+{{--先继承上述的布局模板，然后再填充布局模板里的section--}}
 @section('content')
     @if (count($tasks) > 0)
         <div class="panel panel-default">

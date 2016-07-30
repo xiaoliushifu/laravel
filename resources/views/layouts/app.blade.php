@@ -1,6 +1,6 @@
 <html lang="en">
     <head>
-        <title>>Laravel Quickstart - Intermediate</title>
+        <title>测试用的</title>
     </head>
     <body>
         @yield('content')
