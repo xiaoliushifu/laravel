@@ -7,3 +7,4 @@ vendor
 framework/views
 framework/sessions
 framework/cache
+.env
