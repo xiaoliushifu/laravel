@@ -3,6 +3,7 @@
 .project
 .DS_Store
 storage
+storage/debugbar/*
 vendor
 framework/views
 framework/sessions

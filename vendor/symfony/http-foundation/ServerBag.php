@@ -31,7 +31,7 @@ class ServerBag extends ParameterBag
         $contentHeaders = array('CONTENT_LENGTH' => true, 'CONTENT_MD5' => true, 'CONTENT_TYPE' => true);
         foreach ($this->parameters as $key => $value) {
             if (0 === strpos($key, 'HTTP_')) {
-                $headers[substr($key, 5)] = $value;
+                $headers[substr($key, 5)] = $value;//去掉HTTP_这5个字符
             }
             // CONTENT_* are not prefixed with HTTP_
             elseif (isset($contentHeaders[$key])) {

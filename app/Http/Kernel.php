@@ -25,6 +25,7 @@ class Kernel extends HttpKernel
     /**
      * The application's route middleware.
      *在这里注册路由中间件，然后在路由routes.php里就可以使用了
+     *在实例化App\Http\Kernel类的时候，会交给Illuminate\Routing\Router处理
      * @var array
      */
     protected $routeMiddleware = [
@@ -32,5 +33,6 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'test' =>\App\Http\Middleware\testMiddleware::class,
+        'login' =>\App\Http\Middleware\LoginMiddleware::class,
     ];
 }

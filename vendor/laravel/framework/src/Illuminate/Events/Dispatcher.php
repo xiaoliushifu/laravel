@@ -216,7 +216,7 @@ class Dispatcher implements DispatcherContract
         if (isset($payload[0]) && $payload[0] instanceof ShouldBroadcast) {
             $this->broadcastEvent($payload[0]);
         }
-
+        //获得有关该事件的监听器（就是一个个的回调函数）
         foreach ($this->getListeners($event) as $listener) {
             $response = call_user_func_array($listener, $payload);
 
