@@ -14,7 +14,9 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call(UserTableSeeder::class);
+         //写入类名即可（类的方法run里是实际的SQL逻辑）
+         //php artisan db:seed
+         //$this->call(UserSeeder::class);
 
         Model::reguard();
     }

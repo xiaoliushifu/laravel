@@ -35,7 +35,7 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * Define the routes for the application.
      * laravel默认设定了全部的路由群组为控制器的命名空间，也就是App\Http\Controllers
-     *
+     *而我们在routes.php里写的都是被这个group包含的
      * @param  \Illuminate\Routing\Router  $router
      * @return void
      */

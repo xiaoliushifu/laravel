@@ -14,6 +14,7 @@ class ComposerStaticInit021fb7132a2128f66488338f8ef2580d
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '65fec9ebcfbb3cbb4fd0d519687aea01' => __DIR__ . '/..' . '/danielstjules/stringy/src/Create.php',
+        '841780ea2e1d6545ea3a253239d59c05' => __DIR__ . '/..' . '/qiniu/php-sdk/src/Qiniu/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
@@ -44,10 +45,18 @@ class ComposerStaticInit021fb7132a2128f66488338f8ef2580d
             'SuperClosure\\' => 13,
             'Stringy\\' => 8,
         ),
+        'Q' => 
+        array (
+            'Qiniu\\' => 6,
+        ),
         'P' => 
         array (
             'Psy\\' => 4,
             'PhpParser\\' => 10,
+        ),
+        'O' => 
+        array (
+            'Overtrue\\LaravelUEditor\\' => 24,
         ),
         'M' => 
         array (
@@ -158,6 +167,10 @@ class ComposerStaticInit021fb7132a2128f66488338f8ef2580d
         array (
             0 => __DIR__ . '/..' . '/danielstjules/stringy/src',
         ),
+        'Qiniu\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/qiniu/php-sdk/src/Qiniu',
+        ),
         'Psy\\' => 
         array (
             0 => __DIR__ . '/..' . '/psy/psysh/src/Psy',
@@ -165,6 +178,10 @@ class ComposerStaticInit021fb7132a2128f66488338f8ef2580d
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'Overtrue\\LaravelUEditor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/overtrue/laravel-ueditor/src',
         ),
         'Monolog\\' => 
         array (
@@ -275,8 +292,6 @@ class ComposerStaticInit021fb7132a2128f66488338f8ef2580d
 
     public static $classMap = array (
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
-        'CreatePermissionsAndRoles' => __DIR__ . '/../..' . '/database/migrations/2016_06_22_072953_create_permissions_and_roles.php',
-        'CreateTasksTable' => __DIR__ . '/../..' . '/database/migrations/2015_12_30_124241_create_tasks_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
@@ -785,6 +800,7 @@ class ComposerStaticInit021fb7132a2128f66488338f8ef2580d
         'SessionHandlerInterface' => __DIR__ . '/..' . '/symfony/http-foundation/Resources/stubs/SessionHandlerInterface.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'UserSeeder' => __DIR__ . '/../..' . '/database/seeds/UserSeeder.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

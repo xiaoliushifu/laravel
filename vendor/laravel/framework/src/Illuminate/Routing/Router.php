@@ -634,6 +634,7 @@ class Router implements RegistrarContract
         if (is_null($response)) {
             $response = $this->dispatchToRoute($request);
         }
+        \Log::info(print_r($response));
 
         // Once this route has run and the response has been prepared, we will run the
         // after filter to do any last work on the response or for this application

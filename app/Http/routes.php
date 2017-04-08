@@ -2,11 +2,12 @@
 //全局路由加正则
 
 //Route::pattern('id', '[0-9]+');
-Route::get('/','TaskController@index');
-/* Route::get('/welcome',function(){
-    Auth::loginUsingId(4);
-    return view('welcome');
-}); */
+//Route::get('/','TaskController@index');
+Route::get('/welcome',function(){
+    //Auth::loginUsingId(4);
+    #return view('welcome')->with('fullname','LiuMingWei');
+    return view('welcome')->withFullname('LiuMingWeiw');
+}); 
 // Authentication routes...
 
 // Registration routes...
@@ -15,10 +16,10 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 
 
-Route::group(['domain'=>'{win}.laravel.com','middleware'=>['login'],'prefix'=>'','namespace'=>''],function(){
-        Route::get('/welcome', function () {
-            return 'OK,your get domain';
-        });
+//Route::group(['domain'=>'{win}.laravel.com','middleware'=>['login'],'prefix'=>'','namespace'=>''],function(){
+        //Route::get('/welcome', function () {
+        //    return 'OK,your get domain';
+       // });
         
         /* //默认首页
         Route::get('/',function(){
@@ -37,7 +38,7 @@ Route::group(['domain'=>'{win}.laravel.com','middleware'=>['login'],'prefix'=>''
             return 'OK,your get 2   '.$id;
             //给路由加正则
         })->where('url','[a-z]+'); */
-});
+//});
 
 //匹配路由，第一个参数是http方法
 Route::match(['get', 'post'], '/add', function()

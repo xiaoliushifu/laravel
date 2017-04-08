@@ -146,6 +146,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Overtrue\LaravelUEditor\UEditorServiceProvider::class,
         //这是我们后来添加的debug功能的类
         Barryvdh\Debugbar\ServiceProvider::class,
         //无论是框架的还是应用的，都是自动加载的
