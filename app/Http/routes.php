@@ -2,7 +2,7 @@
 //全局路由加正则
 
 //Route::pattern('id', '[0-9]+');
-//Route::get('/','TaskController@index');
+Route::get('/','TaskController@index');
 Route::get('/welcome',function(){
     //Auth::loginUsingId(4);
     #return view('welcome')->with('fullname','LiuMingWei');

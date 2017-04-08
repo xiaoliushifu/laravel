@@ -22,7 +22,12 @@ class TaskController extends Controller
 
 	public function index(Request $request)
 	{
-	    
+	    $config = app('config');
+	    //var_dump($config);exit;
+	    $a =$config->get('app.debug');
+	    //$a =$config->all();
+	    //\Log::info($a);
+	    return $a;
 	    echo 'aaaaaaaaaaaa<br />';
 	    //手动指定当前登录用户是xxx
 	    //Auth::loginUsingId(4);
