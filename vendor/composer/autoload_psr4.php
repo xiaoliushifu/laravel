@@ -37,5 +37,7 @@ return array(
     'ClassPreloader\\' => array($vendorDir . '/classpreloader/classpreloader/src'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
     'Barryvdh\\Debugbar\\' => array($vendorDir . '/barryvdh/laravel-debugbar/src'),
+    'Appstract\\Opcache\\' => array($vendorDir . '/appstract/laravel-opcache/src'),
+    'Appstract\\LushHttp\\' => array($vendorDir . '/appstract/lush-http/src'),
     'App\\' => array($baseDir . '/app'),
 );

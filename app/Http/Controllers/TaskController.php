@@ -25,8 +25,13 @@ class TaskController extends Controller
 	    $config = app('config');
 	    //var_dump($config);exit;
 	    $a =$config->get('app.debug');
+	    $a =$config->get('app.url');
+	    print_r($_ENV);
+	    $a = env('alioss');
+	    // To something like this:
+	    //config('services.bugsnag.key')
 	    //$a =$config->all();
-	    //\Log::info($a);
+	    \Log::info($a);
 	    return $a;
 	    echo 'aaaaaaaaaaaa<br />';
 	    //手动指定当前登录用户是xxx

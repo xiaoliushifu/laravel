@@ -3411,5 +3411,112 @@
             }
         ],
         "description": "UEditor integration for Laravel."
+    },
+    {
+        "name": "appstract/lush-http",
+        "version": "0.1.5",
+        "version_normalized": "0.1.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/appstract/lush-http.git",
+            "reference": "2e92568d842d9b0978220ab4bf39b6acf11142d4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/appstract/lush-http/2e92568d842d9b0978220ab4bf39b6acf11142d4.zip",
+            "reference": "2e92568d842d9b0978220ab4bf39b6acf11142d4",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "5.*"
+        },
+        "time": "2017-04-06 08:58:51",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Appstract\\LushHttp\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Olav van Schie",
+                "email": "hello@appstract.team",
+                "homepage": "https://appstract.team",
+                "role": "Developer"
+            }
+        ],
+        "description": "Lush, a lightweight Http Client.",
+        "homepage": "https://github.com/appstract/lush-http",
+        "keywords": [
+            "appstract",
+            "client",
+            "curl",
+            "http",
+            "lush",
+            "lush-http",
+            "php"
+        ]
+    },
+    {
+        "name": "appstract/laravel-opcache",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/appstract/laravel-opcache.git",
+            "reference": "38ed1c2ad9f8e4de316bc2c3ddd0600f35c5fa24"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/appstract/laravel-opcache/38ed1c2ad9f8e4de316bc2c3ddd0600f35c5fa24.zip",
+            "reference": "38ed1c2ad9f8e4de316bc2c3ddd0600f35c5fa24",
+            "shasum": ""
+        },
+        "require": {
+            "appstract/lush-http": "^0.1",
+            "illuminate/console": ">=5.1",
+            "illuminate/support": ">=5.1",
+            "php": ">=5.6"
+        },
+        "require-dev": {
+            "orchestra/testbench": "^3.3",
+            "phpunit/phpunit": "5.*"
+        },
+        "time": "2017-03-08 22:43:16",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Appstract\\Opcache\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Olav van Schie",
+                "email": "hello@appstract.team",
+                "homepage": "https://appstract.team",
+                "role": "Developer"
+            }
+        ],
+        "description": "OPcache helper for Laravel.",
+        "homepage": "https://github.com/appstract/laravel-opcache",
+        "keywords": [
+            "Opcache",
+            "appstract",
+            "laravel",
+            "php"
+        ]
     }
 ]

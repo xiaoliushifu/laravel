@@ -4,9 +4,112 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f7b62f01a5faeeca966f2e64397b334f",
-    "content-hash": "db29cbf638e03a528dc58f224d6880ba",
+    "hash": "8b074eaf1a6f31771a9b2328aec608ab",
+    "content-hash": "1d5f00e3558530962275cd75235a533c",
     "packages": [
+        {
+            "name": "appstract/laravel-opcache",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/appstract/laravel-opcache.git",
+                "reference": "38ed1c2ad9f8e4de316bc2c3ddd0600f35c5fa24"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/appstract/laravel-opcache/38ed1c2ad9f8e4de316bc2c3ddd0600f35c5fa24.zip",
+                "reference": "38ed1c2ad9f8e4de316bc2c3ddd0600f35c5fa24",
+                "shasum": ""
+            },
+            "require": {
+                "appstract/lush-http": "^0.1",
+                "illuminate/console": ">=5.1",
+                "illuminate/support": ">=5.1",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.3",
+                "phpunit/phpunit": "5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Appstract\\Opcache\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Olav van Schie",
+                    "email": "hello@appstract.team",
+                    "homepage": "https://appstract.team",
+                    "role": "Developer"
+                }
+            ],
+            "description": "OPcache helper for Laravel.",
+            "homepage": "https://github.com/appstract/laravel-opcache",
+            "keywords": [
+                "Opcache",
+                "appstract",
+                "laravel",
+                "php"
+            ],
+            "time": "2017-03-08 22:43:16"
+        },
+        {
+            "name": "appstract/lush-http",
+            "version": "0.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/appstract/lush-http.git",
+                "reference": "2e92568d842d9b0978220ab4bf39b6acf11142d4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/appstract/lush-http/2e92568d842d9b0978220ab4bf39b6acf11142d4.zip",
+                "reference": "2e92568d842d9b0978220ab4bf39b6acf11142d4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Appstract\\LushHttp\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Olav van Schie",
+                    "email": "hello@appstract.team",
+                    "homepage": "https://appstract.team",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Lush, a lightweight Http Client.",
+            "homepage": "https://github.com/appstract/lush-http",
+            "keywords": [
+                "appstract",
+                "client",
+                "curl",
+                "http",
+                "lush",
+                "lush-http",
+                "php"
+            ],
+            "time": "2017-04-06 08:58:51"
+        },
         {
             "name": "barryvdh/laravel-debugbar",
             "version": "v2.1.1",
