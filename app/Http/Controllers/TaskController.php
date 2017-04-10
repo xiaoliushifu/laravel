@@ -10,6 +10,8 @@ use App\Http\Controllers\Controller;
 use Gate;
 use Auth;
 
+use App\Events\SomeEvent;
+
 class TaskController extends Controller
 {
     //中间件也可以注册到指定的控制器中
@@ -22,6 +24,14 @@ class TaskController extends Controller
 
 	public function index(Request $request)
 	{
+	    //使用辅助函数触发事件
+	    //返回值就是监听者handler方法的返回值。
+	    //重点业务逻辑，都在handler方法了
+	    return event(new SomeEvent());
+	    
+	    
+	    
+	    
 	    $config = app('config');
 	    //var_dump($config);exit;
 	    $a =$config->get('app.debug');
