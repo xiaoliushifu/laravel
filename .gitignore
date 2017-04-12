@@ -9,3 +9,4 @@ framework/views
 framework/sessions
 framework/cache
 .env
+.git/

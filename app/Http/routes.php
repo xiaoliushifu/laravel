@@ -8,6 +8,8 @@ Route::get('/welcome',function(){
     #return view('welcome')->with('fullname','LiuMingWei');
     return view('welcome')->withFullname('LiuMingWeiw');
 }); 
+
+Route::resource('/post','PostController');
 // Authentication routes...
 
 // Registration routes...
