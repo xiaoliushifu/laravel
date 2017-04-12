@@ -18,6 +18,10 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\SomeEvent' => [
             'App\Listeners\EventListener',
         ],
+        //第一步，编写事件与监听者的对应关系
+        'App\Events\BlogView' => [
+            'App\Listeners\BlogViewListener',
+        ],
     ];
 
     /**
