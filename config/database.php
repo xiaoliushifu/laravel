@@ -97,7 +97,8 @@ return [
     |--------------------------------------------------------------------------
     | Redis Databases
     |--------------------------------------------------------------------------
-    |
+    |redis也是作为一个数据库，配置在这个文件里，任何其他的配置需要redis数据库的，
+	|都需要设置其驱动数组，其中的connections就是下面的default等其他
     | Redis is an open source, fast, and advanced key-value store that also
     | provides a richer set of commands than a typical key-value systems
     | such as APC or Memcached. Laravel makes it easy to dig right in.
@@ -107,12 +108,18 @@ return [
     'redis' => [
 
         'client' => 'predis',
-
+		//这是一个connection
         'default' => [
             'host' => env('REDIS_HOST', '127.0.0.1'),
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', 6379),
             'database' => 0,
+        ],
+        'default2' => [
+            'host' => env('REDIS_HOST', '127.0.0.1'),
+            'password' => env('REDIS_PASSWORD', null),
+            'port' => env('REDIS_PORT', 6379),
+            'database' => 2,
         ],
 
     ],
