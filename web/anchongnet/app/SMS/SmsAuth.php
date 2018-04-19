@@ -16,14 +16,18 @@ class smsAuth {
     *       修改密码验证码     模板ID: SMS_6135738     模板内容: 验证码${code}，您正在尝试修改${product}登录密码，请妥善保管账户信息。
     *       登录确认验证码     模板ID: SMS_6135742     模板内容: 验证码${code}，您正在登录${product}，若非本人操作，请勿泄露。
     */
+    //这个和类名相同，是旧版php类的构造函数，但是实例化的时候，并没有调用它，这是因为php5.x的哪个版本已经把它给去掉了，构造函数
+    //必须是__construct();
     public function smsAuth($action, $phone)
     {
         //阿里大鱼的两个key
         $appkey='23327955';
         $secretkey='0a01baddfb5b3a18cb5fdc9c8c4ebefa';
         //创建短信验证类
+        //初始化两个参数，一个是appKey，比如 '23327955'
+        //另一个参数是secretKey，比如 '0a01baddfb5b3a18cb5fdc9c8c4ebefa'
         $alisms = new \App\SMS\AliSms($appkey, $secretkey, '', '');
-        //生成随机的验证码
+        //生成随机的验证码，这里需要注意的是，验证码，是在本地生成的，不是第三方短信平台生成的。
         $code = rand(100000,999999);
         //创建短信内容信息数组
         $smsarr=array();
@@ -45,11 +49,19 @@ class smsAuth {
                 return '数据出错,发送失败！';
                 break;
         }
-        //得到结果
-        $result = $alisms->sign($action)->data($smsarr['data'])->code($smsarr['code'])->send($phone);
+        //sign方法，确定sms_free_sign_name参数，比如 '变更验证'
+        $result = $alisms->sign($action)
+                                  //data方法，确定sms_param参数，比如array('code' => strval($code), 'product' => '安虫平台')
+                                  ->data($smsarr['data'])
+                                  //确定sms_template_code参数，比如'SMS_6135738'，是短信模板的编号。
+                                  ->code($smsarr['code'])
+                                  //在确定了上述的五个参数后，最后一步调用send方法，开始和短信平台进行交互
+                                  //确定rec_num参数，比如'13581968973'
+                                  ->send($phone);
         //将返回的json数据转成数组
         $result = json_decode($result,true);
-        //根据返回的json数据信息判断是否发送成功，并输出内容
+        var_dump($result);exit;
+        //根据返回的json数据信息判断阿里大雨是否发送成功，并输出内容
         foreach ($result as $key => $value) {
             if($key == 'error_response'){
                 return [false,'发送失败，'.$value['sub_msg'].'，请重新发送！'];
